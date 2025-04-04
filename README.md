@@ -167,5 +167,3 @@ sls remove
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 ```
-
-You can save this as `README.md` in the root of your project. Let me know if you need anything else!
