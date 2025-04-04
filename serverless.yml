@@ -1,0 +1,62 @@
+# "org" ensures this Service is used with the correct Serverless Framework Access Key.
+org: stg232809
+# "service" is the name of this project. This will also be added to your AWS resource names.
+service: Event-Management
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: ap-south-1
+  httpApi:
+    cors:
+      allowedOrigins: '*'               
+      allowedHeaders:
+        - Authorization
+        - token                  
+        - Content-Type                  
+        - X-Requested-With
+      allowedMethods: '*'
+
+plugins:
+  - serverless-offline
+
+package:
+  exclude:
+    - node_modules/**
+    - .git/**
+    - .serverless/**
+    - tests/**
+
+functions:
+  EventManagementApi:
+    handler: handler.handler
+    events:
+      - httpApi:
+          path: /api/auth/register
+          method: POST
+      - httpApi:
+          path: /api/auth/confirm
+          method: POST
+      - httpApi:
+          path: /api/auth/resend
+          method: POST
+      - httpApi:
+          path: /api/auth/login
+          method: POST
+      - httpApi:
+          path: /api/events
+          method: GET
+      - httpApi:
+          path: /api/events
+          method: POST
+      - httpApi:
+          path: /api/events/{id}
+          method: PUT
+      - httpApi:
+          path: /api/events/{id}
+          method: DELETE
+      - httpApi:
+          path: /api/events/{id}/download
+          method: GET
+
+

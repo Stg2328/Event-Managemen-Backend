@@ -1,0 +1,2837 @@
+{
+	"info": {
+		"_postman_id": "59255e4c-8f7c-443b-863f-673783cf09f5",
+		"name": "Event Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36763617"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"shahshubham2328@gmail.com\",\r\n  \"password\": \"Shubham@123\",\r\n  \"name\":\"Shah Shubham\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/api/auth/register",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successfully Register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"John Doe\",\r\n  \"email\": \"john.doe@example.com\",\r\n  \"password\": \"SecurePassword123!\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://0mn8v0tv3a.execute-api.ap-south-1.amazonaws.com/api/auth/register",
+									"protocol": "https",
+									"host": [
+										"0mn8v0tv3a",
+										"execute-api",
+										"ap-south-1",
+										"amazonaws",
+										"com"
+									],
+									"path": [
+										"api",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-security-policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "cross-origin-opener-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "cross-origin-resource-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "origin-agent-cluster",
+									"value": "?1"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-dns-prefetch-control",
+									"value": "off"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-length",
+									"value": "267"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"10b-e/8iNwyaMAtCNuvXsZ3XIThyNds\""
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 02 Apr 2025 14:35:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"User registration initiated. Please confirm your email.\",\n    \"data\": {\n        \"UserConfirmed\": false,\n        \"CodeDeliveryDetails\": {\n            \"Destination\": \"j***@e***\",\n            \"DeliveryMedium\": \"EMAIL\",\n            \"AttributeName\": \"email\"\n        },\n        \"UserSub\": \"f1c3ed2a-3001-70cd-08b3-51dc8ecb00db\"\n    }\n}"
+						},
+						{
+							"name": "Wrong Password Type",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"John Doe\",\r\n  \"email\": \"john.doe2@example.com\",\r\n  \"password\": \"SecurePa\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseUrl}}/api/auth/register",
+									"host": [
+										"{{BaseUrl}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-security-policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "cross-origin-opener-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "cross-origin-resource-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "origin-agent-cluster",
+									"value": "?1"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-dns-prefetch-control",
+									"value": "off"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-length",
+									"value": "116"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"74-Ay7jUtTtsezGRi0VVHu5TLrExQA\""
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 02 Apr 2025 14:36:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"message\": \"Password did not conform with policy: Password must have numeric characters\",\n    \"data\": {}\n}"
+						},
+						{
+							"name": "Email Not Valid",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"John Doe\",\r\n  \"email\": \"john.doe2example.com\",\r\n  \"password\": \"SecurePa@123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseUrl}}/api/auth/register",
+									"host": [
+										"{{BaseUrl}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-security-policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "cross-origin-opener-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "cross-origin-resource-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "origin-agent-cluster",
+									"value": "?1"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-dns-prefetch-control",
+									"value": "off"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-length",
+									"value": "72"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"48-s9QL8oZQ4YrWK2rV/C9Caj9KHZQ\""
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 02 Apr 2025 14:37:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"message\": \"\\\"email\\\" must be a valid email\",\n    \"data\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "Confirm Code",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"shahshubham2328@gmail.com\",\r\n  \"ConfirmationCode\": \"215915\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/api/auth/confirm",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"confirm"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Invalid Code",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"shahshubham2328@gmail.com\",\r\n  \"confirmationCode\": \"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://0mn8v0tv3a.execute-api.ap-south-1.amazonaws.com/api/auth/confirm",
+									"protocol": "https",
+									"host": [
+										"0mn8v0tv3a",
+										"execute-api",
+										"ap-south-1",
+										"amazonaws",
+										"com"
+									],
+									"path": [
+										"api",
+										"auth",
+										"confirm"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-security-policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "cross-origin-opener-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "cross-origin-resource-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "origin-agent-cluster",
+									"value": "?1"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-dns-prefetch-control",
+									"value": "off"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-length",
+									"value": "92"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"5c-nMDcD6/36CBplrJ+hPQB9EVhRb0\""
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 02 Apr 2025 14:39:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"message\": \"Invalid code provided, please request a code again.\",\n    \"data\": {}\n}"
+						},
+						{
+							"name": "Already Confirm User",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"shahshubham2328@gmail.com\",\r\n  \"ConfirmationCode\": \"241430\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseUrl}}/api/auth/confirm",
+									"host": [
+										"{{BaseUrl}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"confirm"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-security-policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "cross-origin-opener-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "cross-origin-resource-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "origin-agent-cluster",
+									"value": "?1"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-dns-prefetch-control",
+									"value": "off"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-length",
+									"value": "94"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"5e-r11uooHj64okOkNZj1Gbq34XLVE\""
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 03 Apr 2025 06:09:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"message\": \"User cannot be confirmed. Current status is CONFIRMED\",\n    \"data\": {}\n}"
+						},
+						{
+							"name": "Confirm User Code",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"shahshubham2328@gmail.com\",\r\n  \"ConfirmationCode\": \"836562\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseUrl}}/api/auth/confirm",
+									"host": [
+										"{{BaseUrl}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"confirm"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-security-policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "cross-origin-opener-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "cross-origin-resource-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "origin-agent-cluster",
+									"value": "?1"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-dns-prefetch-control",
+									"value": "off"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-length",
+									"value": "70"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"46-xo0Xx0XCsjBpcp3aG05skjsWIh0\""
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 03 Apr 2025 06:12:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"User confirmed successfully\",\n    \"data\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "Resend Code",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"shahshubham2328@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/api/auth/resend",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"resend"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Resend SuccessFully",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"shahshubham2328@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://0mn8v0tv3a.execute-api.ap-south-1.amazonaws.com/api/auth/resend",
+									"protocol": "https",
+									"host": [
+										"0mn8v0tv3a",
+										"execute-api",
+										"ap-south-1",
+										"amazonaws",
+										"com"
+									],
+									"path": [
+										"api",
+										"auth",
+										"resend"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-security-policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "cross-origin-opener-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "cross-origin-resource-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "origin-agent-cluster",
+									"value": "?1"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-dns-prefetch-control",
+									"value": "off"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-length",
+									"value": "80"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"50-HRDHZ/mzpQKuDGAIXp/pluCx+CQ\""
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 02 Apr 2025 14:40:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Confirmation code resent successfully\",\n    \"data\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"shahshubham2328@gmail.com\",\r\n  \"password\": \"Shubham@123\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/api/auth/login",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successfully Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"shahshubham2328@gmail.com\",\r\n  \"password\": \"Shubham@123\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://0mn8v0tv3a.execute-api.ap-south-1.amazonaws.com/api/auth/login",
+									"protocol": "https",
+									"host": [
+										"0mn8v0tv3a",
+										"execute-api",
+										"ap-south-1",
+										"amazonaws",
+										"com"
+									],
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-security-policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "cross-origin-opener-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "cross-origin-resource-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "origin-agent-cluster",
+									"value": "?1"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-dns-prefetch-control",
+									"value": "off"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"47d-1CMR49+SciCdoHEjK5TdbN6ai2A\""
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "vary",
+									"value": "accept-encoding"
+								},
+								{
+									"key": "content-encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 03 Apr 2025 06:32:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Login successful\",\n    \"data\": {\n        \"accessToken\": \"eyJraWQiOiJaUW1HOWJtalZRUnA2SXYwTnE1ZHlYV05nM1FTZXNJUWxGdzd4VmI5WmVrPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIwMWEzMWQ5YS0yMDAxLTcwYjktNGVhNS1kZDFjOTBmMDEwYWIiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuYXAtc291dGgtMS5hbWF6b25hd3MuY29tXC9hcC1zb3V0aC0xXzNJUk9CYkFKZCIsImNsaWVudF9pZCI6IjNjaW9ubGpsOXN1cnJkdTVlNnNhdDhqdjVkIiwib3JpZ2luX2p0aSI6IjgwNzk1ZjMyLTc3ZmMtNDU3ZC04YzVjLWRmMzE0NmQ1MTM5MSIsImV2ZW50X2lkIjoiN2E2MTIzY2MtZmQyYy00OWFhLTg3ODMtNzlkNWM2MGY1NDM4IiwidG9rZW5fdXNlIjoiYWNjZXNzIiwic2NvcGUiOiJhd3MuY29nbml0by5zaWduaW4udXNlci5hZG1pbiIsImF1dGhfdGltZSI6MTc0MzY2MTk0NiwiZXhwIjoxNzQzNjY1NTQ2LCJpYXQiOjE3NDM2NjE5NDYsImp0aSI6IjVmYjlmNWUxLTAxMjUtNDBiYS04YjRhLWM2NDkwYmJhMzgxMSIsInVzZXJuYW1lIjoiMDFhMzFkOWEtMjAwMS03MGI5LTRlYTUtZGQxYzkwZjAxMGFiIn0.bFu21v4rZN6eRPTq4fQHi0gVans7N3M0FQ7pyhrhgFMQdyc2O9le4OBWPVv-wFkXFO7T6UXQ5_nsB9WdT79pDghDbKZ869ga6dhNmQE_QGUqA7c4SadH2Nza5KRPq7mywBbiQANjKpytR82Ex22QPa_cnVOO0f3kQ8KPuB6lft4AsBQaF-_RbHGWOUgQRaZFssGSIs38qLcukcGthz9oGzRS8vBm64R98_e7UZqPj2MJafvtAUYNbYpz8RYs7zIlgRgpmWQ7LwZy1Lt5PyFbEcYwd4zpskhPZ5wEp3xJveU5w3PUhjRIE74eixSuSAl_oOINfS6Gmn8WDUyCESrh3A\"\n    }\n}"
+						},
+						{
+							"name": "Invalid Credentials",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"shahshubham2328@gmail.com\",\r\n  \"password\": \"Shubham@123a\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseUrl}}/api/auth/login",
+									"host": [
+										"{{BaseUrl}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-security-policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "cross-origin-opener-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "cross-origin-resource-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "origin-agent-cluster",
+									"value": "?1"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-dns-prefetch-control",
+									"value": "off"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-length",
+									"value": "72"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"48-tyubsD7jVXrfnEFv0paX7A/2FEU\""
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 03 Apr 2025 07:37:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"message\": \"Incorrect username or password.\",\n    \"data\": {}\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Event",
+			"item": [
+				{
+					"name": "Get Events",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/api/events?page=1&limit=10",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"events"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://0mn8v0tv3a.execute-api.ap-south-1.amazonaws.com/api/events",
+									"protocol": "https",
+									"host": [
+										"0mn8v0tv3a",
+										"execute-api",
+										"ap-south-1",
+										"amazonaws",
+										"com"
+									],
+									"path": [
+										"api",
+										"events"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-security-policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "cross-origin-opener-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "cross-origin-resource-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "origin-agent-cluster",
+									"value": "?1"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-dns-prefetch-control",
+									"value": "off"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-length",
+									"value": "113"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"71-LB2dXgnorUb0UwK7hoXQk1ZDl90\""
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "accept-ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 03 Apr 2025 07:35:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Events fetched successfully\",\n    \"data\": {\n        \"total\": 0,\n        \"page\": 1,\n        \"totalPages\": 0,\n        \"data\": []\n    }\n}"
+						},
+						{
+							"name": "Unauthorize User",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BaseUrl}}/api/events",
+									"host": [
+										"{{BaseUrl}}"
+									],
+									"path": [
+										"api",
+										"events"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-security-policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "cross-origin-opener-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "cross-origin-resource-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "origin-agent-cluster",
+									"value": "?1"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-dns-prefetch-control",
+									"value": "off"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-length",
+									"value": "72"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"48-9xNTHJrkR2woNlFO1h4awVdxs2k\""
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 03 Apr 2025 07:38:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"message\": \"Authorization token is required\",\n    \"data\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Event",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Tech Conference",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "A conference about the latest in technology",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/wts/Downloads/logo-no-background-removebg-preview.png"
+								},
+								{
+									"key": "date",
+									"value": "2025-05-01",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/api/events",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"events"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success Response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "Tech Conference",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "A conference about the latest in technology",
+											"type": "text"
+										},
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/wts/Downloads/logo-no-background-removebg-preview.png"
+										},
+										{
+											"key": "date",
+											"value": "2025-05-01",
+											"type": "text"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://0mn8v0tv3a.execute-api.ap-south-1.amazonaws.com/api/events",
+									"protocol": "https",
+									"host": [
+										"0mn8v0tv3a",
+										"execute-api",
+										"ap-south-1",
+										"amazonaws",
+										"com"
+									],
+									"path": [
+										"api",
+										"events"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-security-policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "cross-origin-opener-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "cross-origin-resource-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "origin-agent-cluster",
+									"value": "?1"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-dns-prefetch-control",
+									"value": "off"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-length",
+									"value": "401"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"191-M2CUEYio5YLCNzC2w09vI4epEZo\""
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 03 Apr 2025 07:43:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Event created successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"title\": \"Tech Conference\",\n        \"description\": \"A conference about the latest in technology\",\n        \"date\": \"2025-05-01T00:00:00.000Z\",\n        \"updatedAt\": \"2025-04-03T07:43:24.867Z\",\n        \"createdAt\": \"2025-04-03T07:43:23.750Z\",\n        \"fileUrl\": \"https://stgeventmanagement.s3.ap-south-1.amazonaws.com/events/1743666204480-logo-no-background-removebg-preview.png\"\n    }\n}"
+						},
+						{
+							"name": "Invalid Parameter",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "Tech Conference",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "A conference about the latest in technology",
+											"type": "text"
+										},
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/wts/Downloads/logo-no-background-removebg-preview.png"
+										},
+										{
+											"key": "date",
+											"value": "2025-05-01",
+											"type": "text",
+											"disabled": true
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseUrl}}/api/events",
+									"host": [
+										"{{BaseUrl}}"
+									],
+									"path": [
+										"api",
+										"events"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-security-policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "cross-origin-opener-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "cross-origin-resource-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "origin-agent-cluster",
+									"value": "?1"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-dns-prefetch-control",
+									"value": "off"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-length",
+									"value": "61"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"3d-05OU7yL6JmVFFDhtkByTNiWj91s\""
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 03 Apr 2025 07:46:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"message\": \"\\\"date\\\" is required\",\n    \"data\": {}\n}"
+						},
+						{
+							"name": "Unauthorize Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "Tech Conference",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "A conference about the latest in technology",
+											"type": "text"
+										},
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/wts/Downloads/logo-no-background-removebg-preview.png"
+										},
+										{
+											"key": "date",
+											"value": "2025-05-01",
+											"type": "text"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseUrl}}/api/events",
+									"host": [
+										"{{BaseUrl}}"
+									],
+									"path": [
+										"api",
+										"events"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-security-policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "cross-origin-opener-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "cross-origin-resource-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "origin-agent-cluster",
+									"value": "?1"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-dns-prefetch-control",
+									"value": "off"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-length",
+									"value": "72"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"48-9xNTHJrkR2woNlFO1h4awVdxs2k\""
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 03 Apr 2025 07:49:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"message\": \"Authorization token is required\",\n    \"data\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "Edit Event",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Updated Tech Conference",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Updated description",
+									"type": "text"
+								},
+								{
+									"key": "date",
+									"value": "2025-05-10",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BaseUrl}}/api/events/1",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"events",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success Response",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "Updated Tech Conference",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Updated description",
+											"type": "text"
+										},
+										{
+											"key": "date",
+											"value": "2025-05-10",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://0mn8v0tv3a.execute-api.ap-south-1.amazonaws.com/api/events/1",
+									"protocol": "https",
+									"host": [
+										"0mn8v0tv3a",
+										"execute-api",
+										"ap-south-1",
+										"amazonaws",
+										"com"
+									],
+									"path": [
+										"api",
+										"events",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-security-policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "cross-origin-opener-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "cross-origin-resource-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "origin-agent-cluster",
+									"value": "?1"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-dns-prefetch-control",
+									"value": "off"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-length",
+									"value": "385"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"181-VKzVkBPsH/yBi0rIjYqlvNM0ZiA\""
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 03 Apr 2025 07:49:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Event updated successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"title\": \"Updated Tech Conference\",\n        \"description\": \"Updated description\",\n        \"date\": \"2025-05-10T00:00:00.000Z\",\n        \"fileUrl\": \"https://stgeventmanagement.s3.ap-south-1.amazonaws.com/events/1743666204480-logo-no-background-removebg-preview.png\",\n        \"createdAt\": \"2025-04-03T07:43:23.000Z\",\n        \"updatedAt\": \"2025-04-03T07:49:08.834Z\"\n    }\n}"
+						},
+						{
+							"name": "Unauthorize Request",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "Updated Tech Conference",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Updated description",
+											"type": "text"
+										},
+										{
+											"key": "date",
+											"value": "2025-05-10",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{BaseUrl}}/api/events/1",
+									"host": [
+										"{{BaseUrl}}"
+									],
+									"path": [
+										"api",
+										"events",
+										"1"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-security-policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "cross-origin-opener-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "cross-origin-resource-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "origin-agent-cluster",
+									"value": "?1"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-dns-prefetch-control",
+									"value": "off"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-length",
+									"value": "72"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"48-9xNTHJrkR2woNlFO1h4awVdxs2k\""
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 03 Apr 2025 07:50:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"message\": \"Authorization token is required\",\n    \"data\": {}\n}"
+						},
+						{
+							"name": "Invalid Parameter",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "Updated Tech Conference",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Updated description",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "date",
+											"value": "2025-05-10",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{BaseUrl}}/api/events/1",
+									"host": [
+										"{{BaseUrl}}"
+									],
+									"path": [
+										"api",
+										"events",
+										"1"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-security-policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "cross-origin-opener-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "cross-origin-resource-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "origin-agent-cluster",
+									"value": "?1"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-dns-prefetch-control",
+									"value": "off"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-length",
+									"value": "61"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"3d-05OU7yL6JmVFFDhtkByTNiWj91s\""
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 03 Apr 2025 07:50:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"message\": \"\\\"date\\\" is required\",\n    \"data\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Event",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/api/events/1",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"events",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success Response",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://0mn8v0tv3a.execute-api.ap-south-1.amazonaws.com/api/events/1",
+									"protocol": "https",
+									"host": [
+										"0mn8v0tv3a",
+										"execute-api",
+										"ap-south-1",
+										"amazonaws",
+										"com"
+									],
+									"path": [
+										"api",
+										"events",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-security-policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "cross-origin-opener-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "cross-origin-resource-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "origin-agent-cluster",
+									"value": "?1"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-dns-prefetch-control",
+									"value": "off"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-length",
+									"value": "69"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"45-8t5G6Z3g/XiYqes5hG5r5X8sXBc\""
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 03 Apr 2025 08:17:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Event deleted successfully\",\n    \"data\": {}\n}"
+						},
+						{
+							"name": "Invalid Id",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{BaseUrl}}/api/events/3",
+									"host": [
+										"{{BaseUrl}}"
+									],
+									"path": [
+										"api",
+										"events",
+										"3"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-security-policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "cross-origin-opener-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "cross-origin-resource-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "origin-agent-cluster",
+									"value": "?1"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-dns-prefetch-control",
+									"value": "off"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-length",
+									"value": "56"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"38-A5CEXXI3yvLYpWTWMWAoIyh5EaA\""
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 03 Apr 2025 08:18:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"message\": \"Event not found\",\n    \"data\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "Get File Response",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/api/events/1/download",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"events",
+								"1",
+								"download"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://0mn8v0tv3a.execute-api.ap-south-1.amazonaws.com/api/events/1/download",
+									"protocol": "https",
+									"host": [
+										"0mn8v0tv3a",
+										"execute-api",
+										"ap-south-1",
+										"amazonaws",
+										"com"
+									],
+									"path": [
+										"api",
+										"events",
+										"1",
+										"download"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-security-policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "cross-origin-opener-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "cross-origin-resource-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "origin-agent-cluster",
+									"value": "?1"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-dns-prefetch-control",
+									"value": "off"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-length",
+									"value": "468"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"1d4-g9wSN4n8orTRBMteVLHqNkUTD9w\""
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "accept-ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 03 Apr 2025 08:13:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"File download link generated\",\n    \"data\": {\n        \"downloadUrl\": \"https://stgeventmanagement.s3.ap-south-1.amazonaws.com/events/1743666204480-logo-no-background-removebg-preview.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIATFTWKPN7IJKBEUD7%2F20250403%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20250403T081320Z&X-Amz-Expires=60&X-Amz-Signature=4b5994d178347f8b1a46ffe9584476a3b92f198b541536e2b26d960c071fc74c&X-Amz-SignedHeaders=host\"\n    }\n}"
+						},
+						{
+							"name": "Unauthorize User",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BaseUrl}}/api/events/1/download",
+									"host": [
+										"{{BaseUrl}}"
+									],
+									"path": [
+										"api",
+										"events",
+										"1",
+										"download"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-security-policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "cross-origin-opener-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "cross-origin-resource-policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "origin-agent-cluster",
+									"value": "?1"
+								},
+								{
+									"key": "referrer-policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-dns-prefetch-control",
+									"value": "off"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "x-permitted-cross-domain-policies",
+									"value": "none"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "0"
+								},
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "content-length",
+									"value": "72"
+								},
+								{
+									"key": "etag",
+									"value": "W/\"48-9xNTHJrkR2woNlFO1h4awVdxs2k\""
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 03 Apr 2025 08:14:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"message\": \"Authorization token is required\",\n    \"data\": {}\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
