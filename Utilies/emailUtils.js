@@ -2,6 +2,12 @@ require("dotenv").config();
 const nodemailer = require('nodemailer');
 const AWS = require("aws-sdk");
 
+AWS.config.update({
+  accessKeyId: process.env.AWS_KEY_ID,
+  secretAccessKey: process.env.AW_SECRET_KEY,
+  region: process.env.AW_REGION || "ap-south-1",
+});
+
 const cognito = new AWS.CognitoIdentityServiceProvider();
 
 const getConfirmedUserEmails = async () => {

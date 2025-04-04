@@ -7,6 +7,13 @@ const { eventSchema } = require('../Validations/eventValidation');
 const { getConfirmedUserEmails, sendBulkEmail } = require('../Utilies/emailUtils');
 require('dotenv').config();
 
+
+AWS.config.update({
+  accessKeyId: process.env.AWS_KEY_ID,
+  secretAccessKey: process.env.AW_SECRET_KEY,
+  region: process.env.AW_REGION || "ap-south-1",
+});
+
 // AWS S3 Configuration
 const s3 = new AWS.S3({
   accessKeyId: process.env.AWS_KEY_ID,
@@ -95,7 +102,6 @@ const createOrUpdateEvent = async (req, res) => {
           <h2>${event.title}</h2>
           <p>${event.description}</p>
           <p><strong>Date:</strong> ${event.date}</p>
-          ${event.fileUrl ? `<p><a href="${event.fileUrl}">Download Attachment</a></p>` : ""}
         `;
         await sendBulkEmail(emails, subject, html);
       }
