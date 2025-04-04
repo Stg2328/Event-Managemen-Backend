@@ -5,7 +5,7 @@ const sendResponse = require('../Utilies/response'); // Assuming you have this u
 require('dotenv').config();
 // Fetch the JWKS keys from Cognito
 const getCognitoJWKS = async () => {
-  const URL = `https://cognito-idp.${process.env.AWS_REGION}.amazonaws.com/${process.env.POOL_ID}/.well-known/jwks.json`;
+  const URL = `https://cognito-idp.${process.env.AW_REGION}.amazonaws.com/${process.env.POOL_ID}/.well-known/jwks.json`;
   try {
     const response = await axios.get(URL);
     const data = response.data;

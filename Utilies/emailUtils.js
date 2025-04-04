@@ -9,6 +9,7 @@ const getConfirmedUserEmails = async () => {
   let paginationToken = undefined;
 
   try {
+    
     let userPoolId = process.env.POOL_ID
     do {
       const params = {
@@ -17,7 +18,8 @@ const getConfirmedUserEmails = async () => {
       };
 
       const { Users, PaginationToken } = await cognito.listUsers(params).promise();
-
+      console.log(Users);
+      
       Users?.forEach((user) => {
         if (user.UserStatus === "CONFIRMED") {
           const email = user.Attributes?.find(attr => attr.Name === "email")?.Value;

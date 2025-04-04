@@ -9,9 +9,9 @@ require('dotenv').config();
 
 // AWS S3 Configuration
 const s3 = new AWS.S3({
-  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-  region: process.env.AWS_REGION,
+  accessKeyId: process.env.AWS_KEY_ID,
+  secretAccessKey: process.env.AW_SECRET_KEY,
+  region: process.env.AW_REGION,
 });
 
 // Multer setup for file uploads

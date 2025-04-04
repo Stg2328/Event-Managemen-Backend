@@ -7,6 +7,21 @@ provider:
   name: aws
   runtime: nodejs20.x
   region: ap-south-1
+  profile: Stg_test2328
+
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - s3:PutObject
+            - s3:GetObject
+            - s3:DeleteObject
+            - s3:ListBucket
+          Resource:
+            - arn:aws:s3:::stgeventmanagement
+            - arn:aws:s3:::stgeventmanagement/*
+
   httpApi:
     cors:
       allowedOrigins: '*'               
@@ -30,6 +45,22 @@ package:
 functions:
   EventManagementApi:
     handler: handler.handler
+    environment:
+      AW_REGION: ${env:AW_REGION}
+      POOL_ID: ${env:POOL_ID}
+      CLIENT_ID: ${env:CLIENT_ID}
+      CLIENT_SECRET: ${env:CLIENT_SECRET}
+      DB_HOST: ${env:DB_HOST}
+      DB_NAME: ${env:DB_NAME}
+      DB_USERNAME: ${env:DB_USERNAME}
+      DB_PASSWORD: ${env:DB_PASSWORD}
+      AWS_S3_BUCKET: ${env:AWS_S3_BUCKET}
+      AWS_KEY_ID: ${env:AWS_KEY_ID}
+      AW_SECRET_KEY: ${env:AW_SECRET_KEY}
+      TWILIO_ACCOUNT_SID: ${env:twilio_account_sid}
+      TWILIO_ACCOUNT_AUTH_TOKEN: ${env:twilio_account_auth_token}
+      NODEMAILER_EMAIL: ${env:NODEMAILER_EMAIL}
+      NODEMAILER_EMAIL_PASSWORD: ${env:NODEMAILER_EMAIL_PASSWORD}
     events:
       - httpApi:
           path: /api/auth/register
